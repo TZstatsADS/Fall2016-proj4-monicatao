@@ -10,6 +10,12 @@ dir<-"/Users/monicatao/Documents/ads/project4/Project4_data/TestSongFile100/"
 files <- paste0("/Users/monicatao/Documents/ads/project4/Project4_data/TestSongFile100/testsong",1:100)
 files <- paste0(files,".h5")
 filename <- gsub(".*/", "", files)
+test_filename <-list()
+for (i in 1:100) {
+  test_filename[[i]] <- strsplit(filename[i],".",fixed = TRUE)[[1]][1]
+}
+filename <- unlist(test_filename)
+
 bar<-list()
 beat<-list()
 ld_max<-list()
